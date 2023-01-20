@@ -2,6 +2,7 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Pokedex from "./components/Pokedex";
 import PokedexDetail from "./components/PokedexDetail";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 
 function App() {
   return (
@@ -9,8 +10,11 @@ function App() {
       <HashRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/pokedex" element={<Pokedex />} />
-          <Route path="/pokedex/:id" element={<PokedexDetail />} />
+
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/pokedex" element={<Pokedex />} />
+            <Route path="/pokedex/:id" element={<PokedexDetail />} />
+          </Route>
         </Routes>
       </HashRouter>
     </>

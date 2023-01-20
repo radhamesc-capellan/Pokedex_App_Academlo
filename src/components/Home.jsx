@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { changeUserName } from "../store/slices/UserName.slice";
+import logo from '../assets/img/pokedex_logo.svg'
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -16,7 +17,11 @@ const Home = () => {
 
   return (
     <div className="container mx-auto mt-5">
-      <div className="text-center">
+      <div className="self-center" >
+      <img className=" container mx-auto w-[600px] h-[121px]" src={logo} alt="pokedex_logo" />
+      </div>
+        
+      <div className="text-center mt-10">
         <h2 className="text-[50px] font-bold text-[#FE1936]">¡Hola entrenador!</h2>
         <h2 className="text-[25px] font-medium text-[#302F2F]">Para poder comenzar, dame tu nombre</h2>
       </div>
